@@ -1,0 +1,26 @@
+# PublishButtonChanger
+#
+# Release 0.01 (Oct 30, 2010)
+#
+# Copyright (c) 2004-2010 Yujiro Araki
+
+name: PublishButtonChanger
+id: PublishButtonChanger
+version: 0.01
+author_link: http://www.koikikukan.com/
+author_name: Yujiro Araki
+plugin_link: http://www.koikikukan.com/archives/2010/10/30-000300.php
+doc_link: http://www.koikikukan.com/archives/2010/10/30-000300.php
+description: <__trans phrase="PublishButtonChanger.">
+l10n_lexicon:
+    ja:
+        PublishButtonChanger.: 記事公開時に確認のダイアログを表示します。
+        Message: ダイアログのメッセージ
+        Display theme name.: メッセージの直前にテーマ名が表示されます。
+blog_config_template: blog_config.tmpl
+settings:
+    message:
+        default: 記事を公開してもいいですか？
+        scope: blog
+callbacks:
+    MT::App::CMS::template_source.edit_entry: $PublishButtonChanger::PublishButtonChanger::confirm
